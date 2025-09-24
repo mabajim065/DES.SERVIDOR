@@ -1,39 +1,38 @@
-public class juego {
+package com.ejemplos;
 
-    // variables
+public class Juego {
+
     private String nombre;
-    private int edadrecomendada = 0;
+    private int edadRecomendada;
     private int duracion = 0;
-    private float precio = 0.0f;
+    private float precio = 0;
 
-    // constructor vacio
-    public juego() {
-        this.nombre = "hundir la flota";
-        this.edadrecomendada = 7;
-        this.duracion = 30;
-        this.precio = 19.99f;
+    public Juego() {
+        this.nombre = "";
+        this.edadRecomendada = 0;
+        this.duracion = 0;
+        this.precio = 0;
     }
 
-    // constructor con parametros
     /**
-     * constructor que recibe todos los valores de las variables miembro de esta
-     * clase y las asigna
+     * Constructor que recibe todos los valores de las variables miembro de esta
+     * clase
+     * Y se las asigna
      * 
-     * @param nombre
-     * @param edadrecomendada
+     * @param nombre          El nombre del juego
+     * @param edadRecomendada
      * @param duracion
      * @param precio
      */
-    public juego(String nombre, int edadrecomendada, int duracion, float precio) {
-        if (nombre.length() < 511 && !nombre.startsWith("!")) {
-            this.nombre = nombre;
-        }
+    public Juego(String nombre, int edadRecomendada, int duracion, float precio) {
 
-        this.edadrecomendada = edadrecomendada;
+        if (nombre.length() < 511 && !nombre.startsWith("!"))
+            this.nombre = nombre;
+
+        this.edadRecomendada = edadRecomendada;
         this.duracion = duracion;
         this.precio = precio;
     }
-    // hacemos los getters y setters
 
     public String getNombre() {
         return nombre;
@@ -43,12 +42,8 @@ public class juego {
         this.nombre = nombre;
     }
 
-    public int getEdadrecomendada() {
-        return edadrecomendada;
-    }
-
-    public void setEdadrecomendada(int edadrecomendada) {
-        this.edadrecomendada = edadrecomendada;
+    public int getEdadRecomendada() {
+        return edadRecomendada;
     }
 
     public int getDuracion() {
@@ -67,10 +62,14 @@ public class juego {
         this.precio = precio;
     }
 
-    // generamos los metodos toString
+    /**
+     * 
+     */
+
     @Override
     public String toString() {
-        return "juego [nombre=" + nombre + ", edadrecomendada=" + edadrecomendada + ", duracion=" + duracion
+        return "Juego [nombre=" + nombre + ", edadRecomendada=" + edadRecomendada + ", duracion=" + duracion
                 + ", precio=" + precio + "]";
     }
+
 }

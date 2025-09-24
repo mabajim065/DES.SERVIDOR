@@ -1,29 +1,25 @@
 package com.ejemplos;
 
-public class scaperoom extends juego {
+import java.util.List;
 
-    // variable miembro
-    int tiempo = 0;
-    int intentostotales = 0;
-    List<puzzles> listapuzzles;
+public class ScapeRoom extends Juego {
 
-    // funcion que compruebe solucion
+    int tiempo;
+    int intentosTotales;
+    List<Puzzle> listaPuzles;
+
     /**
-     * recoore todos los puzzles y comprueba que no se halla pasado de tiempo nide
-     * intentos
+     * Recorre todos los puzles y comprueba que no se haya
+     * pasado de tiempo ni de intentos
      * 
-     * @param solucion
-     * @param index
      * @return
      */
-    public boolean intentodesolucion(String solucion, int index) {
-        boolean resuelto = false;
-        if (index >= 0 && index < listapuzzles.size()) {
-            puzzles puzzleactual = listapuzzles.get(index);
-            if (puzzleactual.intentodesolucion(solucion)) {
-                resuelto = true;
-            }
+    int comprobarSolucion() {
+
+        for (Puzzle puzzle : listaPuzles) {
+
         }
-        return resuelto;
+
     }
+
 }
