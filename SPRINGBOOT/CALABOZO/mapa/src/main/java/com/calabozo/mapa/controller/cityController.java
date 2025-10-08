@@ -45,7 +45,7 @@ public class cityController {
             redAttrib.addFlashAttribute("error", "La ciudad no Existe");
         else {
             ciudadRepository.deleteById(id);
-            redAttrib.addFlashAttribute("sucess", "Se ha borrado Correctamente la ciudad con id " + id);
+            redAttrib.addFlashAttribute("success", "Se ha borrado Correctamente la ciudad con id " + id);
         }
 
         return "redirect:/ciudades";

@@ -9,7 +9,16 @@
 </head>
 
 <body>
-
+    <div th:fragment="alert">
+        <div th:if="${success}" class="aletr alert-success alert-dismissible fade show" role="alert">
+            <span th:text="${success}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div th:if="${error}" class="aletr alert-danger alert-dismissible fade show" role="alert">
+            <span th:text="${error}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
     <div class="container mt-4">
         <h1>Lista de Ciudades</h1>
         <table class="table table-striped">
@@ -32,7 +41,7 @@
                     <td th:text="${ciudad.fechaFundacion}"> </td>
                     <td th:text="${ciudad.numHabitantes}"></td>
                     <td>
-                        <a th:href="@{/ciudades/eliminar/{id}(id=${ciudad.id})}" class="btn btn-danger btn-sm">
+                        <a th:href="@{/ciudades/eliminar/{id}(id=${ciudad.id})}" class="btn btn-warning btn-sm">
                             Eliminar
                         </a>
                     </td>
@@ -41,5 +50,8 @@
         </table>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
 </html>
