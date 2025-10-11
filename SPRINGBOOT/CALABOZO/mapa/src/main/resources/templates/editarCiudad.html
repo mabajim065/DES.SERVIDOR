@@ -11,6 +11,9 @@
     <div class="container mt-4">
         <h1>Modificar Ciudad</h1>
         <form th:action="@{/ciudades/modificar}" th:object="${ciudad}" method="post">
+            
+            <input type="hidden" th:field="*{id}">
+
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre de la ciudad</label>
                 <input type="text" th:field="*{nombre}" id="nombre" class="form-control" placeholder="Nombre" required>
