@@ -13,6 +13,7 @@ import lombok.Data;
 public class Ciudad {
 
     @Id
+//esto significa que a lla id no hace falta darle un valor manualmente sino que se va a ir autoincrementando
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
