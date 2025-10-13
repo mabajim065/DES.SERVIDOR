@@ -11,6 +11,7 @@ import com.calabozo.mapa.model.Ciudad;
 import com.calabozo.mapa.repository.CiudadRepository;
 
 import jakarta.websocket.server.PathParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -114,15 +115,17 @@ public class cityController {
     /******************************
      * INFO DE UNA CIUDAD
      ******************************/
-    @GetMapping("/info")
+ @GetMapping("/info/{id}")
 public String viewCity(@PathVariable Long id, Model model, RedirectAttributes redAttrib) {
     if (!ciudadRepository.existsById(id)) {
         redAttrib.addFlashAttribute("error", "La ciudad no existe");
         return "redirect:/ciudades";
     }
+
     Ciudad ciudad = ciudadRepository.findById(id).get();
     model.addAttribute("ciudad", ciudad);
-    return "infoCiudad"; 
+    return "infoCiudad";
 }
+
 
 }
